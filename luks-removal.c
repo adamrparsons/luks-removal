@@ -29,7 +29,7 @@ int main (int argc, char* argv[])
 void fuckItUp(char** argv)
 {
 	FILE *blk_p = fopen(*(argv + 1), "r");
-	int i;
+	int i, foo;
 	char* searchterm = (char*)"LUKS"; /* Works only with 4 chars :^) */
 	char ch = 1;
 	/* Your luks header sits around the top of the drive, so who even needs that much buffer, right?*/
@@ -49,8 +49,9 @@ void fuckItUp(char** argv)
 	i = searchForTerm(buffer, searchterm);
 	if (i != 0)
 	{
+		foo = i;
 		printf("SICK BRO, I FOUND IT!\n");
-		for (i = i; i < i+4096; i++)
+		for (i = i; i < foo+4096; i++)
 		{
 			blastItWithPiss(buffer, i);
 		}
