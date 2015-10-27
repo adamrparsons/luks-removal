@@ -93,7 +93,7 @@ void blastItWithPiss (char* buffer, int i)
 {
 	char* pissPhrase = (char*)"TimMcDonald";
 	int len = strlen(pissPhrase);
-	char pissFragment = i % len;
+	char pissFragment = *(pissPhrase + (i % len));
 	*(buffer + i) = pissFragment;
 	/* For those too lazy to figure it out, the above will mean that the pissPhrase
 	will be written as many times as possible, ie TimMcDonaldTimMcDonaldTimMcDonald*/
